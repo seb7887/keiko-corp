@@ -7,12 +7,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.min.css"/>
-	<!-- <link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>	
+	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/main.min.css"/>	
+	<link rel="stylesheet" type="text/css" href="css/main.min.css"/>	 -->
 
 	
 </head>
@@ -295,6 +294,28 @@
 	<script type="text/javascript" src="js/nicescroll.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/scrollTo.js"></script>
+
+	<script>
+		const loadStylesheet = (src) => {
+			if (document.createStylesheet) {
+				document.createStylesheet(src);
+			} else {
+				const stylesheet = document.createElement('link');
+				stylesheet.rel = 'stylesheet';
+				stylesheet.type = 'text/css';
+				stylesheet.href = src;
+				document.getElementsByTagName('head')[0].appendChild(stylesheet);
+			}
+		}
+
+		window.onload = () => {
+			loadStylesheet('css/main.min.css');
+			loadStylesheet('css/bootstrap.css');
+			loadStylesheet('css/owl.transitions.min.css');
+			loadStylesheet('css/owl.carousel.min.css');
+			loadStylesheet('css/animate.min.css');
+		}
+	</script>
 
 </body>
 </html>
